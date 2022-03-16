@@ -24,7 +24,7 @@ namespace OpenSim.Framework
 		/// Determine IP
 		public static string GetPublicIP()
 		{
-			//youreip.php
+			// ### youreip.php.example
 			//<? php
 			//$ip = $_SERVER["REMOTE_ADDR"];
 			//echo "Current IP Address: $ip";  
@@ -78,7 +78,7 @@ namespace OpenSim.Framework
 		}
 		#endregion
 
-		// Insert configuration setting here
+		// testing lines here:
 
 		public string SYSTEMIP = GetPublicIP();
 		public string externalName = GetPublicIP();
