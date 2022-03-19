@@ -24,16 +24,11 @@ namespace OpenSim.Framework
 		/// Determine IP
 		public static string GetPublicIP()
 		{
-			// ### youreip.php.example
-			//<? php
-			//$ip = $_SERVER["REMOTE_ADDR"];
-			//echo "Current IP Address: $ip";  
-			//?>
-
 			// Insert configuration url setting here
 			string url = "http://checkip.dyndns.org";
-			//string url = "http://opensimulator.org/youreip.php";
-
+			// or other server youreip.php.example
+			//string url = "http://otherserver.com/youreip.php";
+						
 			System.Net.WebRequest req = System.Net.WebRequest.Create(url);
 			System.Net.WebResponse resp = req.GetResponse();
 			System.IO.StreamReader sr = new System.IO.StreamReader(resp.GetResponseStream());
@@ -43,6 +38,14 @@ namespace OpenSim.Framework
 			string[] a3 = a2.Split('<');
 			string a4 = a3[0];
 			return a4;
+
+			//test:
+			// Insert configuration url setting here
+			// or other server youreip2.php.example no parsing
+			//string url = "http://checkip.amazonaws.com/";
+			// or other server youreip2.php.example
+			//string url = "http://otherserver.com/youreip2.php";
+
 		}
 		#endregion
 
@@ -80,20 +83,21 @@ namespace OpenSim.Framework
 
 		// testing lines here:
 
-		public string SYSTEMIP = GetPublicIP();
-		public string externalName = GetPublicIP();
+		// ### URL: ###
+		// SYSTEMIP
+		public string AUTOSYSTEMIP = GetPublicIP();
+		// BaseHostname
+		public string AutoBaseHostname = GetPublicIP();
+		// BaseURL
+		public string AutoBaseURL = GetPublicIP();
 
-		public int InternalPort = GetNextFreePort(9100, 9199);
-		public int port = GetNextFreePort(9100, 9199);
-
-		public string BaseURL = GetPublicIP();
-		public string baseurl = GetPublicIP();
-
-		public string BaseHostname = GetPublicIP();
-
-		public int PublicPort = GetNextFreePort(9000, 9199);
-		public int http_listener_port = GetNextFreePort(9000, 9199);
-		public int m_listener_port = GetNextFreePort(9000, 9199);
+		// ### PORT: ###
+		// http_listener_port
+		public int AutoHttpListenerPort = GetNextFreePort(9000, 9099);
+		// XmlRpcPort
+		public int AutoXmlRpcPort = GetNextFreePort(20800, 20899);
+		// InternalPort
+		public int AutoInternalPort = GetNextFreePort(9100, 9199);
 
 	}
 }
