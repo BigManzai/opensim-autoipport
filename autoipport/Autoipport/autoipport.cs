@@ -13,11 +13,14 @@
 
 /*
 Configurations TODO:
-GetPublicIP = true/false
-ParsingPublicIP = true/false
+
+;; IP
+GetPublicIP = true/false (false)
+ParsingPublicIP = true/false (true)
 Ipservice = "http://checkip.dyndns.org" 
 
-GetNextFreePort = true/false
+;; Port
+GetNextFreePort = true/false (false)
 */
 
 using System;
