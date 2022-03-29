@@ -11,6 +11,15 @@
  * SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
  */
 
+/*
+Configurations TODO:
+GetPublicIP = true/false
+ParsingPublicIP = true/false
+Ipservice = "http://checkip.dyndns.org" 
+
+GetNextFreePort = true/false
+*/
+
 using System;
 using System.Linq;
 using System.Net.NetworkInformation;
